@@ -43,10 +43,10 @@ defmodule Day7Test do
   def find_outputs([instr | circuit], outputs) do
     case instr do
       {oper, [in1], out} when is_number(in1) ->
-        find_outputs circuit, Map.put(outputs, out, do_oper(oper, in1))
+        find_outputs circuit, Map.put_new(outputs, out, do_oper(oper, in1))
 	
       {oper, [in1, in2], out} when is_number(in1) and is_number(in2) ->
-        find_outputs circuit, Map.put(outputs, out, do_oper(oper, in1, in2))
+        find_outputs circuit, Map.put_new(outputs, out, do_oper(oper, in1, in2))
       _ ->
         find_outputs circuit, outputs
     end
@@ -78,6 +78,7 @@ defmodule Day7Test do
   end
 
   test "day 7 part two" do
-
+    circuit = [{:set, [3176], "b"}] ++ read_circuit()
+    assert backtrack_wire("a", circuit) == 14710
   end
 end
