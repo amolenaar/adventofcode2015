@@ -1,0 +1,2 @@
+%{"defmemo": {:hex, :defmemo, "0.1.1", "44c7efb97b5e9fa88c2ed97d926d6865c781875803d86ebefe127d29d1a0d8d7", [:mix], []},
+  "memoize": {:hex, :memoize, "1.2.4", "90d5799a0c9b44a02ec814fb45d71b719a06939ed0357f055e93d8935ca1c320", [:mix], []}}
